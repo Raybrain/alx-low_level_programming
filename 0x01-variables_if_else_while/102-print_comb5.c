@@ -20,21 +20,26 @@ int main(void)
 
 	for (i = 0; i < 100; i++)
 	{
-		c = j / 10; /* doubles snum */
-		d = j % 10; /* singles snum */
+		a = i / 10; /* doubles fnum */
+		b = i % 10; /* singles fnum */
 
-		if (a < c || (a == c && b < d))
+		for (j = 0; j < 100; j++)
 		{
-			putchar(a + '0');
-			putchar(b + '0');
-			putchar(32);
-			putchar(c + '0');
-			putchar(d + '0');
-
-			if (!(a == 9 && b == 8))
+			c = j / 10; /* doubles snum */
+			d = j % 10; /* singles snum */
+			if (a < c || (a == c && b < d))
 			{
-				putchar(44);
+				putchar(a + '0');
+				putchar(b + '0');
 				putchar(32);
+				putchar(c + '0');
+				putchar(d + '0');
+
+				if (!(a == 9 && b == 8))
+				{
+					putchar(44);
+					putchar(32);
+				}
 			}
 		}
 	}
