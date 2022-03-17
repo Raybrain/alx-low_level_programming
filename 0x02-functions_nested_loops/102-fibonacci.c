@@ -1,30 +1,20 @@
 #include <stdio.h>
 /**
- * main - entry point
+ * main - print first 50 fibonacci
  *
- * Description: a program that prints the sum of
- * even term values of fibonacci series less
- * than 4,000,000
- * Return: Always 0
+ * Return: 0 always
  */
 int main(void)
 {
-	long int prev1, prev2, nextNum,  sum;
-
-	prev1 = 0;
-	prev2 = 1;
-	nextNum = 0;
-	sum = 0;
-	while (nextNum < 4000000)
-	{
-		nextNum = prev1 + prev2;
-		if (nextNum % 2 == 0)
-		{
-			sum += nextNum;
-		}
-		prev1 = prev2;
-		prev2 = nextNum;
-	}
-	printf("%lu\n", sum);
-	return (0);
+long int i, x = 1, y = 2, sum = 0;
+for (i = 0; i < 49; i++)
+{
+printf("%ld, ", x);
+sum = x + y;
+x = y;
+y = sum;
+if (i == 48)
+printf("%ld\n", x);
+}
+return (0);
 }
